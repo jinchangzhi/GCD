@@ -38,11 +38,10 @@
         [UIView animateWithDuration:0.1 animations:^{
             view.frame = CGRectMake(0, 0, wid, hei);
         } completion:^(BOOL finished) {
-            if (currentValue == max) {
-                [UIView animateWithDuration:0.3 animations:^{
-                    view.backgroundColor = UIColor.systemGreenColor;
-                }];
-            }
+            UIColor *color = currentValue == max ? UIColor.greenColor : UIColor.systemBlueColor;
+            [UIView animateWithDuration:0.3 animations:^{
+                view.backgroundColor = color;
+            }];
         }];
     });
 }
