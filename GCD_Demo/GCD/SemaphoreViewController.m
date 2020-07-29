@@ -121,44 +121,49 @@
 
 -(void)onStart
 {
-    BOOL isSerial = true;
+    BOOL isSerial = false;
     dispatch_queue_attr_t attr = isSerial ? DISPATCH_QUEUE_SERIAL : DISPATCH_QUEUE_CONCURRENT;
     dispatch_queue_t queue1 = dispatch_queue_create("queue1", attr);
-    dispatch_queue_t queue2 = dispatch_queue_create("queue2", attr);
-    dispatch_queue_t queue3 = dispatch_queue_create("queue3", attr);
     NSLog(@"%@->main",[NSThread currentThread]);
     
     semaphore = dispatch_semaphore_create(1);
     
+    //这里可以用一个并发队列，或者多个串行队列。
     dispatch_async(queue1, ^{
-        [self saleTicket:_progressList[0]];
+        NSLog(@"窗口1->%@",[NSThread currentThread]);
+        while (self->_progressList[3].currentValue > 0) {
+            [NSThread sleepForTimeInterval:1];//每秒卖1张票
+            [self saleTicket:self->_progressList[0]];
+        }
     });
     
-    dispatch_async(queue2, ^{
-        [self saleTicket:_progressList[1]];
+    dispatch_async(queue1, ^{
+        NSLog(@"窗口2->%@",[NSThread currentThread]);
+        while (self->_progressList[3].currentValue > 0) {
+            [NSThread sleepForTimeInterval:0.5];//每秒卖2张票
+            [self saleTicket:self->_progressList[1]];
+        }
     });
     
-    dispatch_async(queue3, ^{
-        [self saleTicket:_progressList[2]];
+    dispatch_async(queue1, ^{
+        NSLog(@"窗口3->%@",[NSThread currentThread]);
+        while (self->_progressList[3].currentValue > 0) {
+            [NSThread sleepForTimeInterval:2];//每秒卖0.5张票
+            [self saleTicket:self->_progressList[2]];
+        }
     });
 }
 
+//出票的操作是不耗时的
 -(void)saleTicket:(ProgressView *)window{
-    while (1) {
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        [NSThread sleepForTimeInterval:0.3];
-        
-        NSLog(@"%@",[NSThread currentThread]);
-        NSInteger total = _progressList[3].currentValue;
-        if (total > 0) {
-            _progressList[3].currentValue -= 1;
-            window.currentValue += 1;
-            dispatch_semaphore_signal(semaphore);
-        }else{
-            dispatch_semaphore_signal(semaphore);
-            break;
-        }
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    NSInteger index = [_progressList indexOfObject:window] + 1;
+    NSInteger total = _progressList[3].currentValue;
+    if (total > 0) {
+        _progressList[3].currentValue -= 1;
+        window.currentValue += 1;
     }
+    dispatch_semaphore_signal(semaphore);
 }
 
 -(void)updateTips{

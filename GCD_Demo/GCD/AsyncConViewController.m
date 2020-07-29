@@ -61,7 +61,7 @@
     
     y += hei+20;
     hei = 30;
-    seg = [[SegmentedControl alloc] initWithItems:@[@"Concurrent",@"serial"]];
+    seg = [[SegmentedControl alloc] initWithItems:@[@"Concurrent",@"Serial"]];
     seg.frame = CGRectMake(20, y, 260, hei);
     seg.tintColor = UIColor.systemBlueColor;
     [superView addSubview:seg];
@@ -136,17 +136,17 @@
     
     void(^runProgress1)(void) = ^(){
         ProgressView *view = self->_progressList[0];
+        NSLog(@"%@",[NSThread currentThread]);
         while (view.currentValue < view.maxValue) {
-            NSLog(@"%@",[NSThread currentThread]);
             [NSThread sleepForTimeInterval:0.3];
             view.currentValue += 5;
-            NSLog(@"->%.0f",view.currentValue);
         }
         [self updateTips];
     };
     
     void(^runProgress2)(void) = ^(){
         ProgressView *view = self->_progressList[1];
+        NSLog(@"%@",[NSThread currentThread]);
         while (view.currentValue < view.maxValue) {
             [NSThread sleepForTimeInterval:0.3];
             view.currentValue += 8;
@@ -156,6 +156,7 @@
     
     void(^runProgress3)(void) = ^(){
         ProgressView *view = self->_progressList[2];
+        NSLog(@"%@",[NSThread currentThread]);
         while (view.currentValue < view.maxValue) {
             [NSThread sleepForTimeInterval:0.3];
             view.currentValue += 12;
