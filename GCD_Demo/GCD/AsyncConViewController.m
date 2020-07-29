@@ -13,7 +13,10 @@
 #import "Macro.h"
 
 @interface AsyncConViewController (){
-    ProgressView *_progress1,*_progress2,*_progress3;
+//    ProgressView *_progress1,*_progress2,*_progress3;
+    SegmentedControl *_taskSeg,*_queueSeg;
+    NSMutableArray <UILabel *>*_tips;
+    NSMutableArray <ProgressView *>*_progressList;
 }
 
 @end
@@ -25,6 +28,8 @@
     
     UIView *superView = self.view;
     superView.backgroundColor = UIColor.whiteColor;
+    _tips = NSMutableArray.new;
+    _progressList = NSMutableArray.new;
     
     CGFloat y = kNavBarHei;
     CGFloat hei = 60;
@@ -48,69 +53,138 @@
     
     y += hei;
     hei = 30;
-    SegmentedControl *seg = [[SegmentedControl alloc] initWithItems:@[@"sync",@"async"]];
-    seg.frame = CGRectMake(20, y, 100, hei);
-    seg.tintColor = UIColor.systemBlueColor;
-    [superView addSubview:seg];
-    
-    y += hei+20;
-    hei = 30;
-    seg = [[SegmentedControl alloc] initWithItems:@[@"serial",@"Concurrent"]];
+    SegmentedControl *seg = [[SegmentedControl alloc] initWithItems:@[@"async",@"sync"]];
     seg.frame = CGRectMake(20, y, 160, hei);
     seg.tintColor = UIColor.systemBlueColor;
     [superView addSubview:seg];
+    _taskSeg = seg;
+    
+    y += hei+20;
+    hei = 30;
+    seg = [[SegmentedControl alloc] initWithItems:@[@"Concurrent",@"serial"]];
+    seg.frame = CGRectMake(20, y, 260, hei);
+    seg.tintColor = UIColor.systemBlueColor;
+    [superView addSubview:seg];
+    _queueSeg = seg;
     
     y += hei+20;
     hei = 20;
-    CGFloat x = 20;
-    CGFloat wid = kSize.width - x - x;
+    CGFloat x = 70;
+    CGFloat wid = kSize.width - x - 20;
+    UILabel *label = UILabel.new;
+    label.frame = CGRectMake(0, y, 70, hei);
+    label.text = @"任务1";
+    label.textAlignment = NSTextAlignmentCenter;
+    [superView addSubview:label];
+    [_tips addObject:label];
+    
     ProgressView *v1 = ProgressView.new;
-    v1.frame = CGRectMake(20, y, wid, hei);
+    v1.frame = CGRectMake(x, y, wid, hei);
     [superView addSubview:v1];
-    _progress1 = v1;
+//    _progress1 = v1;
+    [_progressList addObject:v1];
     
     y += hei + hei;
+    label = UILabel.new;
+    label.frame = CGRectMake(0, y, 70, hei);
+    label.text = @"任务2";
+    label.textAlignment = NSTextAlignmentCenter;
+    [superView addSubview:label];
+    [_tips addObject:label];
+    
     v1 = ProgressView.new;
-    v1.frame = CGRectMake(20, y, wid, hei);
+    v1.frame = CGRectMake(x, y, wid, hei);
     [superView addSubview:v1];
-    _progress2 = v1;
+//    _progress2 = v1;
+    [_progressList addObject:v1];
     
     y += hei + hei;
+    label = UILabel.new;
+    label.frame = CGRectMake(0, y, 70, hei);
+    label.text = @"任务3";
+    label.textAlignment = NSTextAlignmentCenter;
+    [superView addSubview:label];
+    [_tips addObject:label];
+    
     v1 = ProgressView.new;
-    v1.frame = CGRectMake(20, y, wid, hei);
+    v1.frame = CGRectMake(x, y, wid, hei);
     [superView addSubview:v1];
-    _progress3 = v1;
+//    _progress3 = v1;
+    [_progressList addObject:v1];
 }
 
 -(void)onReset{
-    _progress1.currentValue = 0;
-    _progress2.currentValue = 0;
-    _progress3.currentValue = 0;
+    for (ProgressView *view in _progressList) {
+        view.currentValue = 0;
+    }
+    
+    [self updateTips];
 }
 
 -(void)onStart{
-    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
-    dispatch_async(queue, ^{
-        ProgressView *view = self->_progress1;
+    //同步任务会阻塞主线程，要放到全局队列来做
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self onNewThread];
+    });
+}
+
+-(void)onNewThread{
+    BOOL isSerial = _queueSeg.selectedSegmentIndex == 1;
+    dispatch_queue_attr_t attr = isSerial ? DISPATCH_QUEUE_SERIAL : DISPATCH_QUEUE_CONCURRENT;
+    dispatch_queue_t queue = dispatch_queue_create("queue", attr);
+    NSLog(@"%@->main",[NSThread currentThread]);
+    
+    void(^runProgress1)(void) = ^(){
+        ProgressView *view = self->_progressList[0];
         while (view.currentValue < view.maxValue) {
+            NSLog(@"%@",[NSThread currentThread]);
             [NSThread sleepForTimeInterval:0.3];
             view.currentValue += 5;
+            NSLog(@"->%.0f",view.currentValue);
         }
-    });
+        [self updateTips];
+    };
     
-    dispatch_async(queue, ^{
-        ProgressView *view = self->_progress2;
+    void(^runProgress2)(void) = ^(){
+        ProgressView *view = self->_progressList[1];
         while (view.currentValue < view.maxValue) {
             [NSThread sleepForTimeInterval:0.3];
             view.currentValue += 8;
         }
-    });
+        [self updateTips];
+    };
     
-    dispatch_async(queue, ^{
-        ProgressView *view = self->_progress3;
+    void(^runProgress3)(void) = ^(){
+        ProgressView *view = self->_progressList[2];
         while (view.currentValue < view.maxValue) {
             [NSThread sleepForTimeInterval:0.3];
             view.currentValue += 12;
+        }
+        [self updateTips];
+    };
+    
+    if (_taskSeg.selectedSegmentIndex == 1) {
+        dispatch_sync(queue, runProgress1);
+        dispatch_sync(queue, runProgress2);
+        dispatch_sync(queue, runProgress3);
+    }else{
+        dispatch_async(queue, runProgress1);
+        dispatch_async(queue, runProgress2);
+        dispatch_async(queue, runProgress3);
+    }
+}
+
+-(void)updateTips{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIColor *color = UIColor.darkGrayColor;
+        UIColor *color2 = UIColor.systemGreenColor;
+        for (int i = 0; i < self->_tips.count; i++) {
+            ProgressView *view = self->_progressList[i];
+            BOOL full = view.currentValue == view.maxValue;
+            [UIView animateWithDuration:1 animations:^{
+                self->_tips[i].textColor = full ? color2 : color;
+            }];
+            
         }
     });
 }

@@ -26,24 +26,34 @@
 
 -(void)setCurrentValue:(CGFloat)currentValue{
     CGFloat max = self->_maxValue;
-    if (currentValue >= max) {
+    if (currentValue > max) {
         currentValue = max;
     }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self->_currentValue = currentValue;
-        CGSize size = self.frame.size;
-        CGFloat wid = currentValue / max * size.width;
-        CGFloat hei = size.height;
-        UIView *view = self->_active;
-        [UIView animateWithDuration:0.1 animations:^{
-            view.frame = CGRectMake(0, 0, wid, hei);
-        } completion:^(BOOL finished) {
-            UIColor *color = currentValue == max ? UIColor.greenColor : UIColor.systemBlueColor;
-            [UIView animateWithDuration:0.3 animations:^{
-                view.backgroundColor = color;
-            }];
+    _currentValue = currentValue;
+    if ([NSThread isMainThread]) {
+        [self updateUI];
+    }else{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateUI];
+        });
+    }
+}
+
+-(void)updateUI{
+    CGFloat max = _maxValue;
+    CGFloat currentValue = _currentValue;
+    CGSize size = self.frame.size;
+    CGFloat wid = currentValue / max * size.width;
+    CGFloat hei = size.height;
+    UIView *view = self->_active;
+    [UIView animateWithDuration:0.1 animations:^{
+        view.frame = CGRectMake(0, 0, wid, hei);
+    } completion:^(BOOL finished) {
+        UIColor *color = currentValue == max ? UIColor.systemGreenColor : UIColor.systemBlueColor;
+        [UIView animateWithDuration:0.3 animations:^{
+            view.backgroundColor = color;
         }];
-    });
+    }];
 }
 
 @end
