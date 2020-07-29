@@ -9,6 +9,10 @@
 #ifndef Macro_h
 #define Macro_h
 
+#define kStatusHei   ([UIApplication sharedApplication].statusBarFrame.size.height)
+
+#define kNavBarHei (kStatusHei+44)
+
 #define kSize UIScreen.mainScreen.bounds.size
 
 #endif /* Macro_h */

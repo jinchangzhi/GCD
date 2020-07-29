@@ -14,6 +14,8 @@
 		18E4202224D10F5000D1E3D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E4202124D10F5000D1E3D8 /* Assets.xcassets */; };
 		18E4202524D10F5000D1E3D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E4202324D10F5000D1E3D8 /* LaunchScreen.storyboard */; };
 		18E4202824D10F5000D1E3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4202724D10F5000D1E3D8 /* main.m */; };
+		18E4203424D1134F00D1E3D8 /* AsyncConViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4203324D1134F00D1E3D8 /* AsyncConViewController.m */; };
+		18E4203724D1139600D1E3D8 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4203624D1139600D1E3D8 /* ProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		18E4202624D10F5000D1E3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18E4202724D10F5000D1E3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18E4202E24D1104300D1E3D8 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		18E4203224D1134F00D1E3D8 /* AsyncConViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncConViewController.h; sourceTree = "<group>"; };
+		18E4203324D1134F00D1E3D8 /* AsyncConViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncConViewController.m; sourceTree = "<group>"; };
+		18E4203524D1139600D1E3D8 /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		18E4203624D1139600D1E3D8 /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,13 +75,33 @@
 				18E4202E24D1104300D1E3D8 /* Macro.h */,
 				18E4201B24D10F4E00D1E3D8 /* ViewController.h */,
 				18E4201C24D10F4E00D1E3D8 /* ViewController.m */,
+				18E4203124D1130D00D1E3D8 /* GCD */,
+				18E4202624D10F5000D1E3D8 /* Info.plist */,
+				18E4203024D1125C00D1E3D8 /* Support */,
+			);
+			path = GCD_Demo;
+			sourceTree = "<group>";
+		};
+		18E4203024D1125C00D1E3D8 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				18E4202724D10F5000D1E3D8 /* main.m */,
 				18E4201E24D10F4E00D1E3D8 /* Main.storyboard */,
 				18E4202124D10F5000D1E3D8 /* Assets.xcassets */,
 				18E4202324D10F5000D1E3D8 /* LaunchScreen.storyboard */,
-				18E4202624D10F5000D1E3D8 /* Info.plist */,
-				18E4202724D10F5000D1E3D8 /* main.m */,
 			);
-			path = GCD_Demo;
+			path = Support;
+			sourceTree = "<group>";
+		};
+		18E4203124D1130D00D1E3D8 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				18E4203224D1134F00D1E3D8 /* AsyncConViewController.h */,
+				18E4203324D1134F00D1E3D8 /* AsyncConViewController.m */,
+				18E4203524D1139600D1E3D8 /* ProgressView.h */,
+				18E4203624D1139600D1E3D8 /* ProgressView.m */,
+			);
+			path = GCD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +178,8 @@
 				18E4201724D10F4E00D1E3D8 /* AppDelegate.m in Sources */,
 				18E4202824D10F5000D1E3D8 /* main.m in Sources */,
 				18E4201A24D10F4E00D1E3D8 /* SceneDelegate.m in Sources */,
+				18E4203424D1134F00D1E3D8 /* AsyncConViewController.m in Sources */,
+				18E4203724D1139600D1E3D8 /* ProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T2P4D32D4N;
 				INFOPLIST_FILE = GCD_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T2P4D32D4N;
 				INFOPLIST_FILE = GCD_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
