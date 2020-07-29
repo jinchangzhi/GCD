@@ -28,20 +28,27 @@ UITableViewDataSource
     [self.view addSubview:tv];
 }
 
+-(NSArray *)examples{
+    return @[
+        @[@"Concurrent & Serial",@"AsyncConViewController"],
+        @[@"Barrier",@"BarrierViewController"]
+    ];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    cell.textLabel.text = @"Concurrent & Serial";
+    cell.textLabel.text = [self examples][indexPath.row][0];
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return 2;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:true];
-    NSArray *vcs = @[@"AsyncConViewController"];
-    Class cls = NSClassFromString(vcs[indexPath.row]);
+    NSString *str = [self examples][indexPath.row][1];
+    Class cls = NSClassFromString(str);
     UIViewController *vc = cls.new;
     [self.navigationController pushViewController:vc animated:true];
 }

@@ -18,7 +18,9 @@
         [self addSubview:_active];
         
         self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
-        _active.backgroundColor = UIColor.systemBlueColor;
+        _activeColor =  UIColor.systemBlueColor;
+        _fullColor = UIColor.systemGreenColor;
+        _active.backgroundColor = _activeColor;
         _maxValue = 100;
     }
     return self;
@@ -49,7 +51,7 @@
     [UIView animateWithDuration:0.1 animations:^{
         view.frame = CGRectMake(0, 0, wid, hei);
     } completion:^(BOOL finished) {
-        UIColor *color = currentValue == max ? UIColor.systemGreenColor : UIColor.systemBlueColor;
+        UIColor *color = currentValue == max ? _fullColor : _activeColor;
         [UIView animateWithDuration:0.3 animations:^{
             view.backgroundColor = color;
         }];

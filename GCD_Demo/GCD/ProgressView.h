@@ -10,13 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ProgressView : UIView
-{
+@interface ProgressView : UIView{
     UIView *_active;
 }
+
 @property(nonatomic,assign)CGFloat maxValue;
 
 @property(nonatomic,assign)CGFloat currentValue;
+
+@property(nonatomic,strong)UIColor *activeColor;
+
+@property(nonatomic,strong)UIColor *fullColor;
 
 @end
 
