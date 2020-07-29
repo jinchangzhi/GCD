@@ -31,7 +31,8 @@ UITableViewDataSource
 -(NSArray *)examples{
     return @[
         @[@"Concurrent & Serial",@"AsyncConViewController"],
-        @[@"Barrier",@"BarrierViewController"]
+        @[@"Barrier",@"BarrierViewController"],
+        @[@"GroupNotify",@"GroupNotifyViewController"]
     ];
 }
 
@@ -42,7 +43,7 @@ UITableViewDataSource
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return [self examples].count;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

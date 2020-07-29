@@ -18,6 +18,7 @@
 		18E4203724D1139600D1E3D8 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4203624D1139600D1E3D8 /* ProgressView.m */; };
 		18E4203D24D1260F00D1E3D8 /* SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4203C24D1260E00D1E3D8 /* SegmentedControl.m */; };
 		18E4204024D158D800D1E3D8 /* BarrierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4203F24D158D800D1E3D8 /* BarrierViewController.m */; };
+		18E4204724D15E1100D1E3D8 /* GroupNotifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4204624D15E1100D1E3D8 /* GroupNotifyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		18E4203C24D1260E00D1E3D8 /* SegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedControl.m; sourceTree = "<group>"; };
 		18E4203E24D158D800D1E3D8 /* BarrierViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarrierViewController.h; sourceTree = "<group>"; };
 		18E4203F24D158D800D1E3D8 /* BarrierViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarrierViewController.m; sourceTree = "<group>"; };
+		18E4204524D15E1100D1E3D8 /* GroupNotifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupNotifyViewController.h; sourceTree = "<group>"; };
+		18E4204624D15E1100D1E3D8 /* GroupNotifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupNotifyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 				18E4202E24D1104300D1E3D8 /* Macro.h */,
 				18E4201B24D10F4E00D1E3D8 /* ViewController.h */,
 				18E4201C24D10F4E00D1E3D8 /* ViewController.m */,
+				18E4204424D15DFF00D1E3D8 /* View */,
 				18E4203124D1130D00D1E3D8 /* GCD */,
 				18E4202624D10F5000D1E3D8 /* Info.plist */,
 				18E4203024D1125C00D1E3D8 /* Support */,
@@ -104,14 +108,23 @@
 			children = (
 				18E4203224D1134F00D1E3D8 /* AsyncConViewController.h */,
 				18E4203324D1134F00D1E3D8 /* AsyncConViewController.m */,
+				18E4203E24D158D800D1E3D8 /* BarrierViewController.h */,
+				18E4203F24D158D800D1E3D8 /* BarrierViewController.m */,
+				18E4204524D15E1100D1E3D8 /* GroupNotifyViewController.h */,
+				18E4204624D15E1100D1E3D8 /* GroupNotifyViewController.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		18E4204424D15DFF00D1E3D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				18E4203524D1139600D1E3D8 /* ProgressView.h */,
 				18E4203624D1139600D1E3D8 /* ProgressView.m */,
 				18E4203B24D1260E00D1E3D8 /* SegmentedControl.h */,
 				18E4203C24D1260E00D1E3D8 /* SegmentedControl.m */,
-				18E4203E24D158D800D1E3D8 /* BarrierViewController.h */,
-				18E4203F24D158D800D1E3D8 /* BarrierViewController.m */,
 			);
-			path = GCD;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +204,7 @@
 				18E4202824D10F5000D1E3D8 /* main.m in Sources */,
 				18E4201A24D10F4E00D1E3D8 /* SceneDelegate.m in Sources */,
 				18E4203424D1134F00D1E3D8 /* AsyncConViewController.m in Sources */,
+				18E4204724D15E1100D1E3D8 /* GroupNotifyViewController.m in Sources */,
 				18E4203724D1139600D1E3D8 /* ProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
