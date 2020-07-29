@@ -20,6 +20,7 @@
 		18E4204024D158D800D1E3D8 /* BarrierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4203F24D158D800D1E3D8 /* BarrierViewController.m */; };
 		18E4204724D15E1100D1E3D8 /* GroupNotifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4204624D15E1100D1E3D8 /* GroupNotifyViewController.m */; };
 		18E4204A24D161C700D1E3D8 /* GroupWaitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4204924D161C700D1E3D8 /* GroupWaitViewController.m */; };
+		18E4204D24D1635600D1E3D8 /* SemaphoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4204C24D1635600D1E3D8 /* SemaphoreViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,8 @@
 		18E4204624D15E1100D1E3D8 /* GroupNotifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupNotifyViewController.m; sourceTree = "<group>"; };
 		18E4204824D161C700D1E3D8 /* GroupWaitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupWaitViewController.h; sourceTree = "<group>"; };
 		18E4204924D161C700D1E3D8 /* GroupWaitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupWaitViewController.m; sourceTree = "<group>"; };
+		18E4204B24D1635600D1E3D8 /* SemaphoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemaphoreViewController.h; sourceTree = "<group>"; };
+		18E4204C24D1635600D1E3D8 /* SemaphoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemaphoreViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				18E4204624D15E1100D1E3D8 /* GroupNotifyViewController.m */,
 				18E4204824D161C700D1E3D8 /* GroupWaitViewController.h */,
 				18E4204924D161C700D1E3D8 /* GroupWaitViewController.m */,
+				18E4204B24D1635600D1E3D8 /* SemaphoreViewController.h */,
+				18E4204C24D1635600D1E3D8 /* SemaphoreViewController.m */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				18E4201724D10F4E00D1E3D8 /* AppDelegate.m in Sources */,
 				18E4202824D10F5000D1E3D8 /* main.m in Sources */,
 				18E4201A24D10F4E00D1E3D8 /* SceneDelegate.m in Sources */,
+				18E4204D24D1635600D1E3D8 /* SemaphoreViewController.m in Sources */,
 				18E4203424D1134F00D1E3D8 /* AsyncConViewController.m in Sources */,
 				18E4204724D15E1100D1E3D8 /* GroupNotifyViewController.m in Sources */,
 				18E4203724D1139600D1E3D8 /* ProgressView.m in Sources */,

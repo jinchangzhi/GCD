@@ -33,7 +33,8 @@ UITableViewDataSource
         @[@"Concurrent & Serial",@"AsyncConViewController"],
         @[@"Barrier",@"BarrierViewController"],
         @[@"GroupNotify",@"GroupNotifyViewController"],
-        @[@"GroupWait",@"GroupWaitViewController"]
+        @[@"GroupWait",@"GroupWaitViewController"],
+        @[@"Semaphore",@"SemaphoreViewController"]
     ];
 }
 
