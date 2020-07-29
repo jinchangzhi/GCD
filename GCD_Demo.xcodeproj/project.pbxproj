@@ -19,6 +19,7 @@
 		18E4203D24D1260F00D1E3D8 /* SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4203C24D1260E00D1E3D8 /* SegmentedControl.m */; };
 		18E4204024D158D800D1E3D8 /* BarrierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4203F24D158D800D1E3D8 /* BarrierViewController.m */; };
 		18E4204724D15E1100D1E3D8 /* GroupNotifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4204624D15E1100D1E3D8 /* GroupNotifyViewController.m */; };
+		18E4204A24D161C700D1E3D8 /* GroupWaitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4204924D161C700D1E3D8 /* GroupWaitViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		18E4203F24D158D800D1E3D8 /* BarrierViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarrierViewController.m; sourceTree = "<group>"; };
 		18E4204524D15E1100D1E3D8 /* GroupNotifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupNotifyViewController.h; sourceTree = "<group>"; };
 		18E4204624D15E1100D1E3D8 /* GroupNotifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupNotifyViewController.m; sourceTree = "<group>"; };
+		18E4204824D161C700D1E3D8 /* GroupWaitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupWaitViewController.h; sourceTree = "<group>"; };
+		18E4204924D161C700D1E3D8 /* GroupWaitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupWaitViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				18E4203F24D158D800D1E3D8 /* BarrierViewController.m */,
 				18E4204524D15E1100D1E3D8 /* GroupNotifyViewController.h */,
 				18E4204624D15E1100D1E3D8 /* GroupNotifyViewController.m */,
+				18E4204824D161C700D1E3D8 /* GroupWaitViewController.h */,
+				18E4204924D161C700D1E3D8 /* GroupWaitViewController.m */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				18E4203424D1134F00D1E3D8 /* AsyncConViewController.m in Sources */,
 				18E4204724D15E1100D1E3D8 /* GroupNotifyViewController.m in Sources */,
 				18E4203724D1139600D1E3D8 /* ProgressView.m in Sources */,
+				18E4204A24D161C700D1E3D8 /* GroupWaitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

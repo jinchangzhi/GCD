@@ -26,6 +26,11 @@
     return self;
 }
 
+-(void)setActiveColor:(UIColor *)activeColor{
+    _activeColor = activeColor;
+    _active.backgroundColor = activeColor;
+}
+
 -(void)setCurrentValue:(CGFloat)currentValue{
     CGFloat max = self->_maxValue;
     if (currentValue > max) {
