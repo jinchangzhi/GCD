@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18039DF624D25CF800D73B50 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18039DF524D25CF700D73B50 /* AboutViewController.m */; };
+		18039DF824D25E4500D73B50 /* about.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18039DF724D25D8500D73B50 /* about.txt */; };
 		18E4201724D10F4E00D1E3D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4201624D10F4E00D1E3D8 /* AppDelegate.m */; };
 		18E4201A24D10F4E00D1E3D8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4201924D10F4E00D1E3D8 /* SceneDelegate.m */; };
 		18E4201D24D10F4E00D1E3D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4201C24D10F4E00D1E3D8 /* ViewController.m */; };
@@ -24,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18039DF424D25CF700D73B50 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		18039DF524D25CF700D73B50 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		18039DF724D25D8500D73B50 /* about.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = about.txt; sourceTree = "<group>"; };
 		18E4201224D10F4E00D1E3D8 /* GCD_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCD_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E4201524D10F4E00D1E3D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18E4201624D10F4E00D1E3D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -122,6 +127,8 @@
 				18E4204924D161C700D1E3D8 /* GroupWaitViewController.m */,
 				18E4204B24D1635600D1E3D8 /* SemaphoreViewController.h */,
 				18E4204C24D1635600D1E3D8 /* SemaphoreViewController.m */,
+				18039DF424D25CF700D73B50 /* AboutViewController.h */,
+				18039DF524D25CF700D73B50 /* AboutViewController.m */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -133,6 +140,7 @@
 				18E4203624D1139600D1E3D8 /* ProgressView.m */,
 				18E4203B24D1260E00D1E3D8 /* SegmentedControl.h */,
 				18E4203C24D1260E00D1E3D8 /* SegmentedControl.m */,
+				18039DF724D25D8500D73B50 /* about.txt */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18039DF824D25E4500D73B50 /* about.txt in Resources */,
 				18E4202524D10F5000D1E3D8 /* LaunchScreen.storyboard in Resources */,
 				18E4202224D10F5000D1E3D8 /* Assets.xcassets in Resources */,
 				18E4202024D10F4E00D1E3D8 /* Main.storyboard in Resources */,
@@ -213,6 +222,7 @@
 				18E4201724D10F4E00D1E3D8 /* AppDelegate.m in Sources */,
 				18E4202824D10F5000D1E3D8 /* main.m in Sources */,
 				18E4201A24D10F4E00D1E3D8 /* SceneDelegate.m in Sources */,
+				18039DF624D25CF800D73B50 /* AboutViewController.m in Sources */,
 				18E4204D24D1635600D1E3D8 /* SemaphoreViewController.m in Sources */,
 				18E4203424D1134F00D1E3D8 /* AsyncConViewController.m in Sources */,
 				18E4204724D15E1100D1E3D8 /* GroupNotifyViewController.m in Sources */,

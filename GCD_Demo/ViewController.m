@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AboutViewController.h"
 #import "Macro.h"
 
 @interface ViewController ()<
@@ -21,11 +22,20 @@ UITableViewDataSource
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
+    self.title = @"GCD";
     
     UITableView *tv = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kSize.width, kSize.height) style:UITableViewStyleGrouped];
     tv.delegate = self;
     tv.dataSource = self;
     [self.view addSubview:tv];
+    
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithTitle:@"About" style:UIBarButtonItemStylePlain target:self action:@selector(onClickAbout)];
+    self.navigationItem.rightBarButtonItem = bbi;
+}
+
+-(void)onClickAbout{
+    AboutViewController *vc = AboutViewController.new;
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 -(NSArray *)examples{
