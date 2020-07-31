@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		18039DF624D25CF800D73B50 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18039DF524D25CF700D73B50 /* AboutViewController.m */; };
 		18039DF824D25E4500D73B50 /* about.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18039DF724D25D8500D73B50 /* about.txt */; };
+		1824ED3424D3EE7B000A6053 /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824ED3324D3EE7B000A6053 /* RuntimeViewController.m */; };
+		1824ED3824D3EEBD000A6053 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824ED3724D3EEBD000A6053 /* TextViewController.m */; };
+		1824ED3C24D3F09D000A6053 /* RunloopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824ED3B24D3F09D000A6053 /* RunloopViewController.m */; };
+		1824ED3D24D3F0DB000A6053 /* runloop.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1824ED3924D3F083000A6053 /* runloop.txt */; };
+		1824ED3E24D3F0E1000A6053 /* runtime.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1824ED3524D3EE92000A6053 /* runtime.txt */; };
 		18E4201724D10F4E00D1E3D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4201624D10F4E00D1E3D8 /* AppDelegate.m */; };
 		18E4201A24D10F4E00D1E3D8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4201924D10F4E00D1E3D8 /* SceneDelegate.m */; };
 		18E4201D24D10F4E00D1E3D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E4201C24D10F4E00D1E3D8 /* ViewController.m */; };
@@ -29,6 +34,14 @@
 		18039DF424D25CF700D73B50 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		18039DF524D25CF700D73B50 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		18039DF724D25D8500D73B50 /* about.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = about.txt; sourceTree = "<group>"; };
+		1824ED3224D3EE7B000A6053 /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
+		1824ED3324D3EE7B000A6053 /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
+		1824ED3524D3EE92000A6053 /* runtime.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = runtime.txt; sourceTree = "<group>"; };
+		1824ED3624D3EEBD000A6053 /* TextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		1824ED3724D3EEBD000A6053 /* TextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
+		1824ED3924D3F083000A6053 /* runloop.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = runloop.txt; sourceTree = "<group>"; };
+		1824ED3A24D3F09D000A6053 /* RunloopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunloopViewController.h; sourceTree = "<group>"; };
+		1824ED3B24D3F09D000A6053 /* RunloopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopViewController.m; sourceTree = "<group>"; };
 		18E4201224D10F4E00D1E3D8 /* GCD_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCD_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E4201524D10F4E00D1E3D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18E4201624D10F4E00D1E3D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,6 +82,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1824ED3124D3EE6B000A6053 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				1824ED3224D3EE7B000A6053 /* RuntimeViewController.h */,
+				1824ED3324D3EE7B000A6053 /* RuntimeViewController.m */,
+				1824ED3624D3EEBD000A6053 /* TextViewController.h */,
+				1824ED3724D3EEBD000A6053 /* TextViewController.m */,
+				1824ED3A24D3F09D000A6053 /* RunloopViewController.h */,
+				1824ED3B24D3F09D000A6053 /* RunloopViewController.m */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
 		18E4200924D10F4E00D1E3D8 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +121,7 @@
 				18E4202E24D1104300D1E3D8 /* Macro.h */,
 				18E4201B24D10F4E00D1E3D8 /* ViewController.h */,
 				18E4201C24D10F4E00D1E3D8 /* ViewController.m */,
+				1824ED3124D3EE6B000A6053 /* Runtime */,
 				18E4204424D15DFF00D1E3D8 /* View */,
 				18E4203124D1130D00D1E3D8 /* GCD */,
 				18E4202624D10F5000D1E3D8 /* Info.plist */,
@@ -141,6 +168,8 @@
 				18E4203B24D1260E00D1E3D8 /* SegmentedControl.h */,
 				18E4203C24D1260E00D1E3D8 /* SegmentedControl.m */,
 				18039DF724D25D8500D73B50 /* about.txt */,
+				1824ED3524D3EE92000A6053 /* runtime.txt */,
+				1824ED3924D3F083000A6053 /* runloop.txt */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +231,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1824ED3E24D3F0E1000A6053 /* runtime.txt in Resources */,
+				1824ED3D24D3F0DB000A6053 /* runloop.txt in Resources */,
 				18039DF824D25E4500D73B50 /* about.txt in Resources */,
 				18E4202524D10F5000D1E3D8 /* LaunchScreen.storyboard in Resources */,
 				18E4202224D10F5000D1E3D8 /* Assets.xcassets in Resources */,
@@ -218,12 +249,15 @@
 			files = (
 				18E4204024D158D800D1E3D8 /* BarrierViewController.m in Sources */,
 				18E4201D24D10F4E00D1E3D8 /* ViewController.m in Sources */,
+				1824ED3C24D3F09D000A6053 /* RunloopViewController.m in Sources */,
 				18E4203D24D1260F00D1E3D8 /* SegmentedControl.m in Sources */,
 				18E4201724D10F4E00D1E3D8 /* AppDelegate.m in Sources */,
 				18E4202824D10F5000D1E3D8 /* main.m in Sources */,
 				18E4201A24D10F4E00D1E3D8 /* SceneDelegate.m in Sources */,
 				18039DF624D25CF800D73B50 /* AboutViewController.m in Sources */,
+				1824ED3424D3EE7B000A6053 /* RuntimeViewController.m in Sources */,
 				18E4204D24D1635600D1E3D8 /* SemaphoreViewController.m in Sources */,
+				1824ED3824D3EEBD000A6053 /* TextViewController.m in Sources */,
 				18E4203424D1134F00D1E3D8 /* AsyncConViewController.m in Sources */,
 				18E4204724D15E1100D1E3D8 /* GroupNotifyViewController.m in Sources */,
 				18E4203724D1139600D1E3D8 /* ProgressView.m in Sources */,

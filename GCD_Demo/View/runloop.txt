@@ -1,0 +1,28 @@
+runloop
+runloop和线程一一对应
+
+3种模式
+defaultMode，没滑动状态
+uitrackMode，滑动状态
+commonMode，滑动不滑动都包含了。
+
+获取当前runloop
+[NSRunloop currentRunloop]
+获取主runloop
+[NSRunloop mainRunloop]
+
+runloop观察者
+CFRunLoopObserverRef
+
+创建一个长驻线程。
+1，获取当前runloop,[NSRunloop currentRunloop]
+2，往runloop添加定时器，addTimer
+3，运行runloop  [runloop run]即可。
+4，runloop就会不停的跑，不会往下执行代码了。
+
+运行到指定时间。
+runUntilData会运行到指定时间。不会往下执行代码。
+等到时间了，就继续往下执行。
+
+
+

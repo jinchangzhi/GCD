@@ -1,0 +1,25 @@
+runtime
+
+1，交换2个方法的实现
+method_exchangeImplementations
+
+2，动态添加属性
+objc_setAssociatedObject
+objc_getAssociatedObject
+
+3，动态添加方法
+class_addMethod(Class cls, SEL name, IMP imp,
+                const char * _Nullable types)
+添加属性，就是要声明并实现set和get方法，
+在set/get用runtime来读写变量。
+
+动态添加方法，需要先实现一个c的方法，
+通过class_addMethod,把对象的sel指向c方法即可。
+
+4，字典转模型
+首先，class_copyIvarlist，获取所有成员变量
+然后，遍历列表，使用ivar_getName获取变量名字。
+然后，在字典里面，通过名字查找值。
+然后找到值，就setValue:forKey，给模型赋值即可。
+
+

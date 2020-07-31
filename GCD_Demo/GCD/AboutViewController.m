@@ -16,22 +16,12 @@
 
 @implementation AboutViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.view.backgroundColor = UIColor.whiteColor;
-    
-    UITextView *textV = UITextView.new;
-    textV.frame = CGRectMake(10, kNavBarHei,
-                             kSize.width-10, kSize.height-kNavBarHei);
-    textV.font = [UIFont systemFontOfSize:16];
-    textV.textColor = UIColor.grayColor;
-    [self.view addSubview:textV];
-    textV.editable = false;
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"about.txt" ofType:nil];
-    NSString *str = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    textV.text = str;
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        self.fileName = @"about.txt";
+    }
+    return self;
 }
 
 @end
